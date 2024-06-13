@@ -1,0 +1,61 @@
+.botones {
+   
+    width: 100px;
+    text-align: center;  
+    margin-right: 5px; 
+    margin-top: 5px;     
+    
+}
+
+
+.tarjetas{
+   filter: drop-shadow(0 0 5px rgb(178,34,49));
+   margin-bottom:10px;
+   margin-left:auto;
+}
+
+
+#card {
+
+   width: 100%;
+   margin:auto;   
+    
+}
+
+.tarjetas_grid{
+
+    display: grid;    
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
+    gap: 5px;
+}
+
+#card:hover{
+
+    box-shadow: 5px 5px 5px rgb(178, 34, 49);
+}
+
+.container_form{
+
+    margin:auto;
+    margin-top:10px;
+    width: 450px;  
+    margin-bottom: 5px; 
+   
+    
+       
+}
+
+
+
+
+.form-control{
+    width:400px;
+}
+
+.table_images {
+
+    margin-top:5%;
+    margin-bottom: 5%;
+    filter: drop-shadow(0 0 5px rgb(178,34,49))
+}
+

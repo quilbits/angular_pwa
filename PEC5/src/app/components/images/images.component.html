@@ -1,0 +1,87 @@
+
+
+<div *ngIf="spinner">
+    <app-spinner></app-spinner>
+</div>
+
+
+
+<div class="container" style="text-align: center;">
+    
+    <div class="container_form">
+    
+        <form >
+            <label>
+             
+                <input class="form-control" type="text" [(ngModel)]="tema" name="tema" placeholder="Indique un tema">
+               <!-- <button id="botones" class="btn btn-success" (click)="enviar()">FIJAR</button>    -->   
+                
+                <button id="botones" class="btn btn-danger botones" (click)="vista(true, false)">CARDS</button>
+                <button id="botones" class="btn btn-danger botones" (click)="vista(false, true)" >TABLE</button>
+                <button id="botones" class="btn btn-success botones" (click)="clear()" >CLEAR</button>
+                        
+            </label> 
+        </form>
+    </div>
+
+    <div *ngIf="cardView" style="max-width: 100%;">    
+        <app-card [tema]="tema"></app-card>
+    </div>
+    
+    <div *ngIf="gridView" style="max-width: 100%;">    
+        <app-grid [tema]="tema"></app-grid>
+    </div>
+
+    <!--
+      
+       
+        <div class="tarjetas_grid" >    
+                  
+             <mat-card id="card" *ngFor="let image of images.hits"  [routerLink]="['/image',image.id]">                                
+                    
+                <mat-card-header>                  
+                        <mat-card-subtitle>LIKES: {{image.likes}}&nbsp;&nbsp;&nbsp;</mat-card-subtitle>           
+                        <mat-card-subtitle> ID: {{image.id}} </mat-card-subtitle>
+                        <mat-card-subtitle>ETIQUETAS: {{image.tags}} </mat-card-subtitle>
+                        <img mat-card-md-image class="tarjetas" src="{{image.previewURL}}" alt="Pulsa para ampliar">
+                </mat-card-header>                          
+
+            </mat-card>               
+                   
+        </div>        
+                 
+    
+    <div *ngIf="tableView" style="width:80%; margin:auto">
+
+        <table  mat-table [dataSource]="images.hits" class="mat-elevation-z8 demo-table" style="margin-top:10px">
+          
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef>Id</th>
+              <td mat-cell *matCellDef="let element">{{element.id}}</td>
+            </ng-container>
+                  
+          
+             <ng-container matColumnDef="likes">
+              <th mat-header-cell *matHeaderCellDef>Likes</th>
+              <td mat-cell *matCellDef="let image">{{image.likes}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="tags">
+                <th mat-header-cell *matHeaderCellDef>Tags</th>
+                <td mat-cell *matCellDef="let image">{{image.tags}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="previewURL">
+                <th mat-header-cell *matHeaderCellDef>Image</th>
+                <td mat-cell *matCellDef="let image"><img class="table_images" style="height: 30px; width:30px" src={{image.previewURL}}></td>
+              </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/image',row.id]"></tr>
+          </table>         
+          
+    </div>-->
+
+
+</div>
+

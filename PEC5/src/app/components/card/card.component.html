@@ -1,0 +1,21 @@
+       
+    
+        <button id="boton_update" class="btn btn-success" (click)="ngOnInit()">UPDATE</button>  
+        
+        <div class="tarjetas_grid" >    
+                
+            <mat-card id="card" *ngFor="let image of images.hits"  [routerLink]="['/image',image.id]">                           
+                    
+                <mat-card-header>                  
+                        <mat-card-subtitle>LIKES: {{image.likes}}&nbsp;&nbsp;&nbsp;</mat-card-subtitle>           
+                        <mat-card-subtitle> ID: {{image.id}} </mat-card-subtitle>
+                        <mat-card-subtitle>ETIQUETAS: {{image.tags}} </mat-card-subtitle>                      
+                        <img mat-card-md-image class="tarjetas" src="{{image.previewURL}}" alt="Pulsa para ampliar">
+                </mat-card-header>                       
+
+            </mat-card>          
+        
+   
+    </div>
+    
+

@@ -1,0 +1,30 @@
+
+a{
+    margin-bottom: 10px; 
+    margin-top:10px    
+  
+}
+
+.imagen_principal {
+
+    max-width: 100%;
+    filter: drop-shadow(0 0 5px rgb(45, 38, 39));
+    max-height:100%; 
+}
+
+.card-image {
+
+    display:flex;
+    width:80%;
+    height:80%;
+    overflow: auto;
+}
+
+#span_buttons {
+    display: flex; 
+    justify-content: space-around;
+}
+
+
+
+

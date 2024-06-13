@@ -1,0 +1,45 @@
+<div *ngIf="spinner">
+    <app-spinner></app-spinner>
+</div>
+
+<div class="container mt-5" style="width:50%;height: 80%">
+    
+  <!--  <mat-card class="card-image">  -->  
+
+        <div style="width:100%;height: 100%;"  *ngFor="let image of images.hits" id="div_image"  class="row animate_animated animate_bounce animate_fadeIn">
+                      
+                <p style="font-size: 20px; text-align: center; margin-top: 10px;"><strong style="margin-right:10px;font-size:20px; ;">Imagenes relacionadas con: </strong>{{image.tags}}></p> 
+                              
+                <img  class="imagen_principal" src="{{image.largeImageURL}}" alt="">
+                <span id="span_buttons">     
+                    <a  class="btn btn-danger" style="height:40px" (click)="changeShowDetails(true)">Show All Details</a>  
+                    <a  class="btn btn-danger" style="height:40px" (click)="changeShowDetails(false)">Hide All Details</a>                 
+                    <a  class="btn btn-danger" style="height:40px" routerLink="/">Back</a>                    
+                </span>
+                        
+                <div *ngIf="showDetails" class="card-image2">
+
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            CARACTERISTICAS
+                            
+                          </mat-panel-title>
+                          <mat-panel-description>
+                            Detalle de todas las caracteristica de una imagen
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <p><strong>Pagina URL: </strong> 
+                          <a [href]="image.pageURL">{{image.pageURL}}</a>-
+                          <a [href]="image.largeImageURL" download="mi-imagen.jpg">Ampliar Imagen</a>
+                        </p>
+                        <p><strong>Tamaño:</strong> {{image.imageSize}}</p>
+                        <p><strong>Likes:</strong> {{image.likes}}</p>
+                        <p><strong>Veces visitada:</strong> {{image.views}}</p>
+                        <p><strong>Veces Descargada:</strong> {{image.downloads}}</p>
+                      </mat-expansion-panel>                    
+                </div>                                 
+                    
+    </div>
+    <!--</mat-card>-->
+</div>
